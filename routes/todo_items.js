@@ -1,7 +1,14 @@
 import express from "express";
 const router = express.Router();
-import { getAllToDoItems, createNewToDoItems } from "../controllers/todo_items.js";
+import {
+  getTodo,
+  getAllTodos,
+  createTodo,
+  deleteTodo,
+  updateTodo,
+} from "../controllers/todo_items.js";
 
-router.route("/").get( getAllToDoItems ).post(createNewToDoItems);
+router.route("/").get(getAllTodos).post(createTodo);
+router.route("/:id").get(getTodo).delete(deleteTodo).patch(updateTodo);
 
 export default router;
