@@ -1,4 +1,8 @@
-import express, { Router } from "express";
+import express from "express";
 const router = express.Router();
 
-router.get('api/v1/todo_items')
+router.get("/", (req, res) => {
+  res.send('list of todo items');
+});
+
+export default router;
