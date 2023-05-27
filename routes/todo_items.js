@@ -1,8 +1,7 @@
 import express from "express";
 const router = express.Router();
+import { getAllToDoItems } from "../controllers/todo_items.js";
 
-router.get("/", (req, res) => {
-  res.send('list of todo items');
-});
+router.route("/").get( getAllToDoItems );
 
 export default router;
